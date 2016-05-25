@@ -1,2 +1,2 @@
-# metadata-validator
-Validator engine for metadatas
+# ValidatorBundle
+A bundle for OJS that allows validating entities by different rule sets.
