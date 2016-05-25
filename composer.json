@@ -8,5 +8,10 @@
             "email": "utku.aydin@okulbilisim.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Ojs\\ValidatorBundle\\": ""
+        }
+    },
     "require": {}
 }
