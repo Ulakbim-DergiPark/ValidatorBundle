@@ -1,0 +1,12 @@
+{
+    "name": "ojs/validator-bundle",
+    "description": "A bundle for OJS that allows validating entities by different rule sets.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Utku Aydın",
+            "email": "utku.aydin@okulbilisim.com"
+        }
+    ],
+    "require": {}
+}
