@@ -1,1 +1,4 @@
-# Empty service configuration
+services:
+  ojs.validator:
+    class: Ojs\ValidatorBundle\Service\ValidatorService
+    arguments: ['@file_locator']

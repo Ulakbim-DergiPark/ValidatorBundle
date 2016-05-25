@@ -1,0 +1,11 @@
+# A set for testing purposes and a better alternative to .gitkeep file
+
+Ojs\JournalBundle\Entity\ArticleTranslation:
+  properties:
+    title:
+      - Length: { min: 5, max: 10 }
+
+Ojs\JournalBundle\Entity\Article:
+    properties:
+        translations:
+            - Valid: ~
