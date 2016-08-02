@@ -1,11 +1,88 @@
 # A set for testing purposes and a better alternative to .gitkeep file
 
-Ojs\JournalBundle\Entity\ArticleTranslation:
+Ojs\JournalBundle\Entity\JournalTranslation:
   properties:
     title:
-      - Length: { min: 5, max: 10 }
+      - Length: { min: 2, max: 120 }
+    subtitle:
+      - Length: { min: 2, max: 120 }
+    titleAbbr:
+      - Length: { max: 24 }
 
-Ojs\JournalBundle\Entity\Article:
+Ojs\JournalBundle\Entity\Journal:
+  properties:
+    translations:
+      - Valid: ~
+    titleTransliterated:
+      - Length: { max: 120 }
+    domain:
+      - Length: { max: 253 }
+
+Ojs\JournalBundle\Entity\SectionTranslation:
+  properties:
+    title:
+      - Length: { min: 5, max: 120 }
+
+Ojs\JournalBundle\Entity\Section:
     properties:
         translations:
             - Valid: ~
+
+Ojs\JournalBundle\Entity\ArticleTranslation:
+  properties:
+    title:
+      - Length: { min: 5, max: 215 }
+      - Regex: "/[\\(\\)\\-,.:<>;=?‘’\\p{L}]+/"
+    abstract:
+      - Length: { min: 250, max: 2500 }
+    keywords:
+      - Length: { min: 1, max: 320 }
+
+Ojs\JournalBundle\Entity\Article:
+  properties:
+    translations:
+      - Valid: ~
+    articleAuthors:
+      - Count: { min: 1 }
+
+Ojs\JournalBundle\Entity\IssueTranslation:
+  properties:
+    title:
+      - Length: { max: 120 }
+    description:
+      - Length: { max: 250 }
+
+Ojs\JournalBundle\Entity\Issue:
+  properties:
+    translations:
+      - Valid: ~
+
+Ojs\UserBundle\Entity\User:
+  properties:
+    username:
+      - Length: { min: 3, max: 21 }
+      - Regex: "/^[\\p{L}][\\p{L}0-9]+/"
+    email:
+      - Email: ~
+    firstName:
+      - Length: { min: 2 }
+      - Regex: "/[\\p{L} ]+/"
+    lastName:
+      - Length: { min: 2 }
+      - Regex: "/[\\p{L} ]+/"
+    about:
+      - Length: { max: 250 }
+    tags:
+      - Length: { min: 1, max: 200 }
+
+Ojs\JournalBundle\Entity\JournalContact:
+  properties:
+    fullName:
+      - Length: { min: 2 }
+      - Regex: "/[\\p{L} ]+/"
+    email:
+      - Email: ~
+    address:
+      - Length: { max: 250 }
+    phone:
+      - Regex: "/[0-9]+/"
