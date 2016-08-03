@@ -33,6 +33,7 @@ Ojs\JournalBundle\Entity\ArticleTranslation:
     title:
       - Length: { min: 5, max: 215 }
       - Regex: "/[\\(\\)\\-,.:<>;=?‘’\\p{L}]+/"
+      - Ojs\ValidatorBundle\Constraint\HasNoHtml: ~
     abstract:
       - Length: { min: 250, max: 2500 }
     keywords:
