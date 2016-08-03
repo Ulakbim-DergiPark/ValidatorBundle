@@ -45,6 +45,13 @@ Ojs\JournalBundle\Entity\Article:
     articleAuthors:
       - Count: { min: 1 }
 
+Ojs\JournalBundle\Entity\AdminFile:
+  properties:
+    title:
+      - Length: { max: 120 }
+    description:
+      - Length: { max: 250 }
+
 Ojs\JournalBundle\Entity\IssueTranslation:
   properties:
     title:
@@ -56,6 +63,25 @@ Ojs\JournalBundle\Entity\Issue:
   properties:
     translations:
       - Valid: ~
+
+Ojs\JournalBundle\Entity\JournalContact:
+  properties:
+    fullName:
+      - Length: { min: 2 }
+      - Regex: "/[\\p{L} ]+/"
+    email:
+      - Email: ~
+    address:
+      - Length: { max: 250 }
+    phone:
+      - Regex: "/[0-9]+/"
+
+Ojs\AdminBundle\Entity\AdminFile:
+  properties:
+    name:
+      - Length: { max: 120 }
+    description:
+      - Length: { max: 250 }
 
 Ojs\UserBundle\Entity\User:
   properties:
@@ -74,15 +100,3 @@ Ojs\UserBundle\Entity\User:
       - Length: { max: 250 }
     tags:
       - Length: { min: 1, max: 200 }
-
-Ojs\JournalBundle\Entity\JournalContact:
-  properties:
-    fullName:
-      - Length: { min: 2 }
-      - Regex: "/[\\p{L} ]+/"
-    email:
-      - Email: ~
-    address:
-      - Length: { max: 250 }
-    phone:
-      - Regex: "/[0-9]+/"
