@@ -77,6 +77,18 @@ Ojs\JournalBundle\Entity\JournalContact:
     phone:
       - Regex: "/[0-9]+/"
 
+Ojs\JournalBundle\Entity\SubmissionSettingTranslation:
+  properties:
+    submissionConfirmText:
+      - Length: { min: 180 }
+    submissionAbstractTemplate:
+      - Length: { max: 250 }
+
+Ojs\JournalBundle\Entity\SubmissionSetting:
+  properties:
+    translations:
+      - Valid: ~
+
 Ojs\AdminBundle\Entity\AdminFile:
   properties:
     name:
